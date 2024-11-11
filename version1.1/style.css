@@ -1,22 +1,19 @@
 body{
-
     margin-left: 5%;
     margin-right: 5%;
     background-color: gray; 
 }
-
 
 header{
     margin-top: 3%;
     display: flex;
     justify-content: center;
     
-
     img{
-        width: 300px;       /* Ajuste la taille de l'image */
-        height: 300px;      /* Assure-toi que l'image est carrée pour un cercle parfait */
-        border-radius: 50%; /* Rend l'image ronde */
-        object-fit: cover;  /* Recadre l'image pour remplir le cercle sans déformation */
+        width: 300px;
+        height: 300px;
+        border-radius: 50%;
+        object-fit: cover;
         margin-left: -25%;
     }
 
@@ -25,22 +22,18 @@ header{
         border-radius: 50px;
         padding-left: 5%;
         padding-right: 5%;
-
         display: flex;
         flex-direction: column;
         justify-content: center;
     }
     h1{
         font-size: 55px;
-        font-family: 'Montserrat', sans-serif; /* Titres */
+        font-family: 'Montserrat', sans-serif;
     }
     h2{
         font-size: 35px;
-
     }
 }
-
-
 
 #menu {
     position: relative;
@@ -59,16 +52,12 @@ header{
     transition: color 0.3s;
 }
 
-
-
-/* Barre soulignée */
 .underline {
     position: absolute;
     bottom: 0;
     left: 0;
     height: 3px;
     width: 0;
-    background-color: #00c5cd; /* Couleur turquoise */
+    background-color: #00c5cd;
     transition: width 0.3s ease, transform 0.3s ease;
 }
-

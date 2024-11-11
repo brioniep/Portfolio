@@ -8,54 +8,42 @@
 </head>
 <body>
     
-<header>
-    <div id="photo_profil">
-            <img src="/version1.1/Capture d’écran du 2024-01-18 16-47-21.png">
-    </div>
-    <div id="entete">    
-        <h1>SERO Léonard</h1>
-        <h2>But Réseau et télécommunication - IUT UHA Colmar</h2>
-    </div>
-</header>
+    <header>
+        <div id="photo_profil">
+                <img src="/version1.1/Capture d’écran du 2024-01-18 16-47-21.png">
+        </div>
+        <div id="entete">    
+            <h1>SERO Léonard</h1>
+            <h2>But Réseau et télécommunication - IUT UHA Colmar</h2>
+        </div>
+    </header>
 
-<section id="menu">
-    <div class="bouton-menu" data-link="1">A propos</div>
-    <div class="bouton-menu" data-link="2">Compétences</div>
-    <div class="bouton-menu" data-link="3">Languages</div>
-    <div class="bouton-menu" data-link="4">Projets</div>
-    <div class="underline"></div>
-</section>
+    <section id="menu">
+        <div class="bouton-menu" data-link="1">A propos</div>
+        <div class="bouton-menu" data-link="2">Compétences</div>
+        <div class="bouton-menu" data-link="3">Languages</div>
+        <div class="bouton-menu" data-link="4">Projets</div>
+        <div class="underline"></div>
+    </section>
 
+    <!-- PARTIE JAVASCRIPT -->
 
+    <script>
+        const menuItems = document.querySelectorAll('.bouton-menu');
+        const underline = document.querySelector('.underline');
 
+        menuItems.forEach((item) => {
+            item.addEventListener('click', (e) => {
+                const { offsetLeft, offsetWidth } = e.target;
 
-
-
-
-
-<!-- PARTIE JAVASCRIPT -->
-
-<script>
-    const menuItems = document.querySelectorAll('.bouton-menu');
-const underline = document.querySelector('.underline');
-
-menuItems.forEach((item) => {
-    item.addEventListener('click', (e) => {
-        // Récupère les dimensions de l'élément cliqué
-        const { offsetLeft, offsetWidth } = e.target;
-
-        // Applique les nouvelles dimensions et position à la barre
-        underline.style.width = `${offsetWidth}px`;
-        underline.style.transform = `translateX(${offsetLeft}px)`;
-        
-        // Met à jour les styles des liens (couleur active)
-        menuItems.forEach(link => link.classList.remove('active'));
-        e.target.classList.add('active');
-    });
-});
-</script>
-
-
+                underline.style.width = `${offsetWidth}px`;
+                underline.style.transform = `translateX(${offsetLeft}px)`;
+                
+                menuItems.forEach(link => link.classList.remove('active'));
+                e.target.classList.add('active');
+            });
+        });
+    </script>
 
 </body>
 </html>
