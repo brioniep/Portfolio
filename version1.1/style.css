@@ -2,7 +2,7 @@ body{
 
     margin-left: 5%;
     margin-right: 5%;
-    background-color: gray;
+    background-color: gray; 
 }
 
 
@@ -42,10 +42,33 @@ header{
 
 
 
-#menu{
+#menu {
+    position: relative;
     display: flex;
     justify-content: space-around;
     margin-top: 5%;
-    font-family: 'Playfair Display', serif; /* Texte */
-
+    font-family: 'Playfair Display', serif;
+    font-size: 25px;
+    cursor: pointer;
 }
+
+.bouton-menu {
+    color: black;
+    position: relative;
+    padding: 5px 10px;
+    transition: color 0.3s;
+}
+
+
+
+/* Barre soulignée */
+.underline {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 3px;
+    width: 0;
+    background-color: #00c5cd; /* Couleur turquoise */
+    transition: width 0.3s ease, transform 0.3s ease;
+}
+
