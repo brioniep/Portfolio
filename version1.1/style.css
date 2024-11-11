@@ -1,0 +1,51 @@
+body{
+
+    margin-left: 5%;
+    margin-right: 5%;
+    background-color: gray;
+}
+
+
+header{
+    margin-top: 3%;
+    display: flex;
+    justify-content: center;
+    
+
+    img{
+        width: 300px;       /* Ajuste la taille de l'image */
+        height: 300px;      /* Assure-toi que l'image est carrée pour un cercle parfait */
+        border-radius: 50%; /* Rend l'image ronde */
+        object-fit: cover;  /* Recadre l'image pour remplir le cercle sans déformation */
+        margin-left: -25%;
+    }
+
+    #entete{
+        border-style: solid;
+        border-radius: 50px;
+        padding-left: 5%;
+        padding-right: 5%;
+
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+    h1{
+        font-size: 55px;
+        font-family: 'Montserrat', sans-serif; /* Titres */
+    }
+    h2{
+        font-size: 35px;
+
+    }
+}
+
+
+
+#menu{
+    display: flex;
+    justify-content: space-around;
+    margin-top: 5%;
+    font-family: 'Playfair Display', serif; /* Texte */
+
+}
