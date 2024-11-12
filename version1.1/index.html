@@ -9,12 +9,17 @@
 <body>
     
     <header>
-        <div id="photo_profil">
-                <img src="/version1.1/Capture d’écran du 2024-01-18 16-47-21.png">
+        <div id="haut">        
+            <div id="photo_profil">
+                <img src="/version1.1/Capture d’écran du 2024-01-18 16-47-21.png" alt="Photo de profil">
+            </div>            
+            <div id="entete">    
+                <h1>SERO Léonard</h1>
+                <h2>But Réseau et télécommunication - IUT UHA Colmar</h2>
+            </div>
         </div>
-        <div id="entete">    
-            <h1>SERO Léonard</h1>
-            <h2>But Réseau et télécommunication - IUT UHA Colmar</h2>
+        <div id="bas">        
+            <button class="button" id="startButton">START</button>
         </div>
     </header>
 
@@ -26,9 +31,58 @@
         <div class="underline"></div>
     </section>
 
-    <!-- PARTIE JAVASCRIPT -->
+
+
+    <section class="slides" id="partie1">
+        <article class="article">
+            <h1>LOREM</h1>
+            <p>Vestibulum interdum mauris vel volutpat fringilla. Integer id pulvinar ante, nec pulvinar lacus. 
+                Donec sit amet tincidunt erat. Praesent non erat at sem mollis pellentesque ac in neque. Aliquam
+                 vitae dolor a leo commodo mattis quis vitae neque. Proin aliquam, metus ut commodo convallis, 
+                 augue lectus finibus ante, sed congue urna ex vitae sapien. Curabitur id nisl imperdiet, porta 
+                 turpis non, tincidunt lectus. Duis imperdiet enim sit amet diam ornare, a eleifend erat pretium.
+                  Duis convallis lorem ac blandit condimentum. Aenean tincidunt dapibus tortor, sit amet ultrices 
+                  magna lobortis a. Aliquam erat volutpat. Morbi et lacus sit amet nunc convallis gravida ornare 
+                  in quam. Proin sit amet augue a quam viverra imperdiet ac id sapien. Aenean nec cursus lorem, 
+                  sed posuere orci. Morbi ac nisl erat. Praesent pretium turpis sed fermentum pulvinar.
+                </p>
+        </article>
+    </section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
     <script>
+        // Fonction pour faire défiler vers le menu
+        document.getElementById('startButton').addEventListener('click', () => {
+            document.querySelector('#menu').scrollIntoView({ behavior: 'smooth' });
+        });
+
         const menuItems = document.querySelectorAll('.bouton-menu');
         const underline = document.querySelector('.underline');
 
@@ -43,7 +97,48 @@
                 e.target.classList.add('active');
             });
         });
-    </script>
+        const entete = document.getElementById("entete");
 
+        entete.addEventListener("mousemove", (e) => {
+            const rect = entete.getBoundingClientRect();
+            const x = e.clientX - rect.left; // Position X de la souris dans l'élément
+            const y = e.clientY - rect.top;  // Position Y de la souris dans l'élément
+
+            // Calcule l'angle de rotation en fonction de la position de la souris
+            const rotateX = ((y / rect.height) - 0.5) * -10; // Rotation verticale
+            const rotateY = ((x / rect.width) - 0.5) * 10;   // Rotation horizontale
+
+            // Applique la transformation
+            entete.style.transform = `perspective(500px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale(0.98)`;
+        });
+
+        // Réinitialise la transformation lorsque la souris quitte l'élément
+        entete.addEventListener("mouseleave", () => {
+            entete.style.transform = "perspective(500px) scale(1)";
+        });
+
+
+        const profileImage = document.querySelector("#photo_profil img");
+
+        profileImage.addEventListener("mousemove", (e) => {
+            const rect = profileImage.getBoundingClientRect();
+            const x = e.clientX - rect.left; // Position X de la souris dans l'image
+            const y = e.clientY - rect.top;  // Position Y de la souris dans l'image
+
+            // Calcule l'angle de rotation en fonction de la position de la souris
+            const rotateX = ((y / rect.height) - 0.5) * -10; // Rotation verticale
+            const rotateY = ((x / rect.width) - 0.5) * 10;   // Rotation horizontale
+
+            // Applique la transformation
+            profileImage.style.transform = `perspective(500px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale(0.98)`;
+        });
+
+        // Réinitialise la transformation lorsque la souris quitte l'image
+        profileImage.addEventListener("mouseleave", () => {
+            profileImage.style.transform = "perspective(500px) scale(1)";
+        });
+
+
+    </script>
 </body>
 </html>

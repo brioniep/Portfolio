@@ -1,53 +1,104 @@
-body{
-    margin-left: 5%;
-    margin-right: 5%;
-    background-color: gray; 
+/* Général */
+body {
+    margin: 0;
+    font-family: 'Montserrat', sans-serif;
 }
 
-header{
-    margin-top: 3%;
+/* Fond d'image pour le header */
+header {
     display: flex;
+    flex-direction: column;
+    align-items: center;
     justify-content: center;
-    
-    img{
-        width: 300px;
-        height: 300px;
-        border-radius: 50%;
-        object-fit: cover;
-        margin-left: -25%;
-    }
-
-    #entete{
-        border-style: solid;
-        border-radius: 50px;
-        padding-left: 5%;
-        padding-right: 5%;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-    }
-    h1{
-        font-size: 55px;
-        font-family: 'Montserrat', sans-serif;
-    }
-    h2{
-        font-size: 35px;
-    }
+    height: 100vh; /* Plein écran */
+    text-align: center;
+    background-image: url('DSC4534.webp'); /* Mettez ici le chemin vers votre image */
+    background-size: cover; /* Couvre tout le header */
+    background-position: center; /* Centre l'image */
 }
 
+
+
+#haut{
+    display: flex;
+}
+
+
+#photo_profil img {
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-right: 90px;
+    transition: transform 0.1s ease, box-shadow 0.1s ease; /* Transition rapide pour suivre la souris */
+    transform-style: preserve-3d; /* Nécessaire pour l’effet 3D */
+    border-style: solid;
+}
+
+
+#entete {
+    margin: 20px;
+    border-style: solid;
+    border-radius: 50px;
+    padding: 2%;
+    background-color: rgba(255, 255, 255, 0.3); /* Fond semi-transparent */
+    backdrop-filter: blur(10px); /* Flou de l'arrière-plan */
+    transition: transform 0.1s ease, box-shadow 0.1s ease; /* Transition rapide pour suivre la souris */
+    transform-style: preserve-3d; /* Nécessaire pour l’effet de profondeur */
+}
+
+/* Augmente l'ombre pour renforcer l'effet de profondeur */
+#entete:hover {
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+
+
+
+h1 {
+    font-size: 3em;
+    text-align: center;}
+
+h2 {
+    font-size: 1.5em;
+    text-align: center;
+}
+
+/* Style du bouton */
+.button {
+    margin-top: 140px;
+    cursor: pointer;
+    font-size: x-large; /* Taille de police légèrement plus grande que l'original */
+    font-weight: bold;
+    color: #0011ff;
+    background-color: #f8f8fd;
+    padding: 0.9em 2.5em; /* Padding légèrement augmenté pour agrandir le bouton */
+    border-radius: 50em;
+    border: 6px solid #8b93f8;
+    box-shadow: 0px 8px #1f35ff;
+    transition: transform 0.3s;
+}
+
+.button:active {
+    transform: translateY(8px);
+    box-shadow: none;
+}
+
+
+
+/* Menu en haut de la page */
 #menu {
-    position: relative;
+    position: sticky;
+    top: 0;
     display: flex;
     justify-content: space-around;
-    margin-top: 5%;
-    font-family: 'Playfair Display', serif;
-    font-size: 25px;
-    cursor: pointer;
+    background-color: #f8f8fd;
+    padding: 15px 0;
+    font-size: 1.25em;
 }
 
 .bouton-menu {
     color: black;
-    position: relative;
     padding: 5px 10px;
     transition: color 0.3s;
 }
@@ -59,5 +110,11 @@ header{
     height: 3px;
     width: 0;
     background-color: #d3b014;
-    transition: width 0.3s ease, transform 0.3s ease;
+    transition: width 0.3s ease, transform 0.5s ease;
 }
+
+
+
+
+
+
