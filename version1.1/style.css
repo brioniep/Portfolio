@@ -58,6 +58,6 @@ header{
     left: 0;
     height: 3px;
     width: 0;
-    background-color: #00c5cd;
+    background-color: #d3b014;
     transition: width 0.3s ease, transform 0.3s ease;
 }
